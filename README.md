@@ -2,7 +2,7 @@
 Underwatch is a utility for tracking changes to the ini and save files for Undertale.
 Underwatch uses Python 3.4 and the Clint module for coloured output.
 
-By default, Underwatch prints out any changes to the terminal in the following format:
+By default, any changes are printed out to the terminal in the following format:
 
     file9 changed
     (54) 4  >> 5  (Spared count)
@@ -18,15 +18,19 @@ Changes to the save file include the line number and a description if one is kno
 I've taken my descriptions from the Traveler's Guide to the Underland:
 https://docs.google.com/document/d/1h_vdEFZMtefD-nkCZ7ODzArp7BRbGgN0_7HQ1XjTT8Y/edit#heading=h.a5d6q4uvp7b8
 and from some experimentation.
+
 The descriptions for save file lines are stored in _saveFile and can be modified and added to, the -u switch allows the descriptions to be updated while Underwatch is running.
 
 Timestamps can be added to the output with the -t switch, the format for the timestamp can optionally be supplied as an argument, or will default to [%H:%M:%S]
+
 All python time format codes can be used, a full list is included at the end of this readme
 
 On first run, Underwatch will confirm the directory for Undertale data (usually C:\\Users\\<username>\\AppData\\Local\\UNDERTALE), once set the _path file is created and used in future.
+
 The -p option allows a custom path to be supplied, overriding the _path file or skipping its creation
 
 The -f or -s switch can be used to output changes to files. -f stores all changes in a single log file, while -s stores each set of changes in a new timestamped file.
+
 By default the timestamp format is %Y-%m-%d %H.%M.%S, this can be overridden by supplying a format with -t
 
 By default, Underwatch closes when Undertale closes, this behaviour can be overridden with -x
