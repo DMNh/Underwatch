@@ -75,7 +75,7 @@ class Underwatcher:
 	def readFile(self, filepath):
 		
 		file = filepath.split("\\")[-1]
-		with open(filepath, 'r') as f:
+		with open(filepath, 'r', encoding=sys.stdout.encoding) as f:
 			if 'ini' in file:
 				self.fileContents[file] = {}
 				for line in f.readlines():
@@ -168,7 +168,7 @@ class Underwatcher:
 				
 	def parseini(self, filepath):
 		file = filepath.split("\\")[-1]
-		with open(filepath, 'r') as f:
+		with open(filepath, 'r', encoding=sys.stdout.encoding) as f:
 			for line in f.readlines():
 				if '[' in line:
 					section = line.strip("\r\n[]")
@@ -192,7 +192,7 @@ class Underwatcher:
 
 	def parseSave(self, filepath):
 		file = filepath.split("\\")[-1]
-		with open(filepath, 'r') as f:
+		with open(filepath, 'r', encoding=sys.stdout.encoding) as f:
 			i = 0
 			for line in f.readlines():
 				if file not in self.fileContents:
