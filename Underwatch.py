@@ -5,7 +5,6 @@ import re
 from clint.textui import colored
 import sys
 from argparse import ArgumentParser
-import re
 
 class Underwatcher:
 	
